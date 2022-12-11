@@ -5,11 +5,7 @@ const router = createRouter({
   history: routerHistory,
   routes: [
     {
-      path: "/:catchAll(.*)",
-      redirect: "countries",
-    },
-    {
-      path: "/countries",
+      path: "/",
       name: "Countries",
       component: () => import("./modules/country/views/Countries.vue"),
     },
