@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: "/:catchAll(.*)",
-      redirect: "countries",
+      redirect: "/",
     },
     {
       path: "/",
