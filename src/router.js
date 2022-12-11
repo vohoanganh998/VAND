@@ -2,9 +2,14 @@ import { createRouter, createWebHistory } from "vue-router";
 const routerHistory = createWebHistory();
 const router = createRouter({
   history: routerHistory,
+  base: '/vand-test/',
   routes: [
     {
-      path: "/",
+      path: "/:catchAll(.*)",
+      redirect: "countries",
+    },
+    {
+      path: "/countries",
       name: "Countries",
       component: () => import("./modules/country/views/Countries.vue"),
     },
