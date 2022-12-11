@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-const routerHistory = createWebHistory();
+const routerHistory = createWebHistory('/vand-test/');
 const router = createRouter({
   history: routerHistory,
-  base: '/vand-test',
   routes: [
     {
       path: "/:catchAll(.*)",
