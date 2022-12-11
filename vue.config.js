@@ -4,13 +4,14 @@ const modules = "./src/modules";
 const assets = "./src/assets";
 const components = "./src/components";
 module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "/vand-test/" : "/",
   css: {
     loaderOptions: {
       less: {
         lessOptions: {
           javascriptEnabled: true,
         },
-      }
+      },
     },
   },
   configureWebpack: {
