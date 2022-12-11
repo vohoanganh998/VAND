@@ -8,10 +8,10 @@ const router = createRouter({
       redirect: "countries",
     },
     {
-        path: "/countries",
-        name: "Countries",
-        component: () => import("./modules/country/views/Countries.vue"),
-      },
+      path: "/countries",
+      name: "Countries",
+      component: () => import("./modules/country/views/Countries.vue"),
+    }
   ],
 });
 export default router;

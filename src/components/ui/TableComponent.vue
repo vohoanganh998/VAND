@@ -113,7 +113,7 @@
 </template>
   
 <script>
-import { onMounted, ref } from "@vue/runtime-core";
+import { ref, watch } from "@vue/runtime-core";
 import IconComponent from "./IconComponent.vue";
 import SkeletonBox from "./SkeletonBox.vue";
 export default {
@@ -174,10 +174,13 @@ export default {
       }
     };
 
-    onMounted(() => {
-      sortFunc();
-    });
-
+    watch(
+      () => props.dataSoucre,
+      () => {
+        sortFunc();
+      }
+    );
+    
     return { sortData, keySort, typeSort, dataTable };
   },
 };

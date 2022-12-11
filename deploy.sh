@@ -11,4 +11,4 @@ git add -A
 git commit -m 'New Deployment'
 git push -f git@github.com:vohoanganh998/VAND.git master:gh-pages
 
-cd-
+cd -
