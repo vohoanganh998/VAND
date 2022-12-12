@@ -144,21 +144,18 @@ export default {
 
     /*Sort data table*/
     const sortFunc = (type = "number") => {
-      if (!keySort.value) dataTable.value = props.dataSoucre;
-      else {
-        if (type === "number") {
-          dataTable.value.sort((a, b) =>
-            typeSort.value
-              ? b[keySort.value] - a[keySort.value]
-              : a[keySort.value] - b[keySort.value]
-          );
-        } else if (type === "string") {
-          dataTable.value.sort((a, b) =>
-            typeSort.value
-              ? b[keySort.value].localeCompare(a[keySort.value])
-              : a[keySort.value].localeCompare(b[keySort.value])
-          );
-        }
+      if (type === "number") {
+        dataTable.value.sort((a, b) =>
+          typeSort.value
+            ? b[keySort.value] - a[keySort.value]
+            : a[keySort.value] - b[keySort.value]
+        );
+      } else if (type === "string") {
+        dataTable.value.sort((a, b) =>
+          typeSort.value
+            ? b[keySort.value].localeCompare(a[keySort.value])
+            : a[keySort.value].localeCompare(b[keySort.value])
+        );
       }
     };
 
@@ -176,11 +173,12 @@ export default {
 
     watch(
       () => props.dataSoucre,
-      () => {
-        sortFunc();
+      (newVal) => {
+        dataTable.value = newVal;
+        if (keySort.value) sortFunc();
       }
     );
-    
+
     return { sortData, keySort, typeSort, dataTable };
   },
 };

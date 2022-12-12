@@ -1,5 +1,6 @@
 <template>
   <div class="px-40">
+    <p>- Click on the table column name to sort</p>
     <Table
       :columns="columnsData"
       :data-soucre="countries"
